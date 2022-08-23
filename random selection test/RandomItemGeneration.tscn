@@ -1,0 +1,163 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://RandomItemGeneration.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="Node2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+selectionArray = [ "Speed UP", "Range UP", "Health UP", "Damage UP", "Special UP", "Invunerability", "get trolled lol", "Explosive", "Break UP", "Explosive Immunity" ]
+testArray = [ [ "Damage", 5.0 ], [ "Health", 4.0 ], [ "Speed", 3.0 ], [ "Special", 2.0 ], [ "Range", 5 ], [ "Break", 6 ] ]
+
+[node name="Main Container" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VALUES" type="Control" parent="Main Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HP" type="Label" parent="Main Container/VALUES"]
+margin_left = 18.0
+margin_top = 14.0
+margin_right = 76.0
+margin_bottom = 28.0
+text = "Health = "
+
+[node name="HPValue" type="Label" parent="Main Container/VALUES/HP"]
+margin_left = 58.0
+margin_right = 114.0
+margin_bottom = 14.0
+text = "NUMBER"
+
+[node name="Damage" type="Label" parent="Main Container/VALUES"]
+margin_left = 18.0
+margin_top = 41.0
+margin_right = 86.0
+margin_bottom = 55.0
+text = "Damage = "
+
+[node name="DamageValue" type="Label" parent="Main Container/VALUES/Damage"]
+margin_left = 68.0
+margin_right = 124.0
+margin_bottom = 14.0
+text = "NUMBER"
+
+[node name="Speed" type="Label" parent="Main Container/VALUES"]
+margin_left = 18.0
+margin_top = 69.0
+margin_right = 73.0
+margin_bottom = 83.0
+text = "Speed = "
+
+[node name="SpeedValue" type="Label" parent="Main Container/VALUES/Speed"]
+margin_left = 58.0
+margin_right = 114.0
+margin_bottom = 14.0
+text = "NUMBER"
+
+[node name="Special" type="Label" parent="Main Container/VALUES"]
+margin_left = 21.0
+margin_top = 98.0
+margin_right = 82.0
+margin_bottom = 112.0
+text = "Special = "
+
+[node name="SpecialValue" type="Label" parent="Main Container/VALUES/Special"]
+margin_left = 68.0
+margin_right = 124.0
+margin_bottom = 14.0
+text = "NUMBER"
+
+[node name="Range" type="Label" parent="Main Container/VALUES"]
+margin_left = 21.0
+margin_top = 127.0
+margin_right = 75.0
+margin_bottom = 141.0
+text = "Range = "
+
+[node name="RangeValue" type="Label" parent="Main Container/VALUES/Range"]
+margin_left = 58.0
+margin_right = 114.0
+margin_bottom = 14.0
+text = "NUMBER"
+
+[node name="Break" type="Label" parent="Main Container/VALUES"]
+margin_left = 21.0
+margin_top = 156.0
+margin_right = 73.0
+margin_bottom = 170.0
+text = "Break = "
+
+[node name="BreakValue" type="Label" parent="Main Container/VALUES/Break"]
+margin_left = 52.0
+margin_right = 108.0
+margin_bottom = 14.0
+text = "NUMBER"
+
+[node name="ColorRect" type="ColorRect" parent="Main Container"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -298.0
+margin_top = -300.0
+margin_right = 302.0
+margin_bottom = 300.0
+color = Color( 0.184314, 0.184314, 0.184314, 1 )
+
+[node name="Sprite" type="Sprite" parent="Main Container/ColorRect"]
+position = Vector2( 131, 227 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Main Container/ColorRect"]
+position = Vector2( 302, 226 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="Main Container/ColorRect"]
+position = Vector2( 475, 227 )
+texture = ExtResource( 2 )
+
+[node name="Option1" type="Button" parent="Main Container/ColorRect"]
+anchor_left = 0.217
+anchor_top = 0.303
+anchor_right = 0.217
+anchor_bottom = 0.303
+margin_left = -34.2
+margin_top = -9.8
+margin_right = 33.8
+margin_bottom = 10.2
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 34, 10 )
+text = "option 1"
+
+[node name="Option2" type="Button" parent="Main Container/ColorRect"]
+margin_left = 268.0
+margin_top = 172.0
+margin_right = 336.0
+margin_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Option 2"
+
+[node name="Option3" type="Button" parent="Main Container/ColorRect"]
+margin_left = 441.0
+margin_top = 172.0
+margin_right = 509.0
+margin_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Option 3"
+
+[node name="Generate" type="Button" parent="."]
+margin_left = 952.0
+margin_right = 1023.0
+margin_bottom = 20.0
+text = "Generate"
+
+[connection signal="pressed" from="Main Container/ColorRect/Option1" to="." method="_on_Option1_pressed"]
+[connection signal="pressed" from="Main Container/ColorRect/Option2" to="." method="_on_Option2_pressed"]
+[connection signal="pressed" from="Main Container/ColorRect/Option3" to="." method="_on_Option3_pressed"]
+[connection signal="pressed" from="Generate" to="." method="_on_Generate_pressed"]
